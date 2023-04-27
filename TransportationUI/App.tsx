@@ -7,8 +7,15 @@
 
 import React from 'react';
 
+import HomeScreen from './src/screens/HomeScreen';
+import DestinationSearch from './src/screens/DestinationSearch';
+
 function App(): JSX.Element {
-  return <></>;
+  return (
+    <>
+      <DestinationSearch />
+    </>
+  );
 }
 
 export default App;
