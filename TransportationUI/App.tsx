@@ -14,7 +14,7 @@ import PickCar from './src/screens/PickCar';
 function App(): JSX.Element {
   return (
     <>
-      <PickCar />
+      <HomeScreen />
     </>
   );
 }
