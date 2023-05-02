@@ -10,11 +10,13 @@ import React from 'react';
 import HomeScreen from './src/screens/HomeScreen';
 import DestinationSearch from './src/screens/DestinationSearch';
 import PickCar from './src/screens/PickCar';
+import {StatusBar} from 'react-native';
 
 function App(): JSX.Element {
   return (
     <>
-      <HomeScreen />
+      <StatusBar barStyle="dark-content" />
+      <DestinationSearch />
     </>
   );
 }

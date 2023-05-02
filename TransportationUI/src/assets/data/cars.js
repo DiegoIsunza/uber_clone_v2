@@ -16,15 +16,15 @@ export default [
   {
     id: '2',
     type: 'UberXL',
-    latitude: 28.456208,
+    latitude: 28.46,
     longitude: -16.259098,
-    heading: 250,
+    heading: 100,
   },
   {
     id: '3',
     type: 'Comfort',
     latitude: 28.454812,
     longitude: -16.258658,
-    heading: 30,
+    heading: 120,
   },
 ];
