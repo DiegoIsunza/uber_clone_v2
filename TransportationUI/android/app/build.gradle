@@ -91,7 +91,6 @@ def reactNativeArchitectures() {
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
 
     namespace "com.transportationui"
     defaultConfig {
@@ -100,6 +99,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        compileSdkVersion rootProject.ext.compileSdkVersion
     }
 
     splits {

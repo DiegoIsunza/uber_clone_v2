@@ -12,8 +12,8 @@ const CarTypes = () => {
 
   return (
     <View>
-      {typesData.map((type, key) => (
-        <CarTypeRow key={key} type={type} />
+      {typesData.map(type => (
+        <CarTypeRow key={type.id} type={type} />
       ))}
 
       <Pressable
