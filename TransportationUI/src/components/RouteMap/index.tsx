@@ -4,15 +4,15 @@ import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import {GOOGLE_API_KEY} from '@env';
 
-const RouteMap = () => {
-  const origin = {
-    latitude: 28.450627,
-    longitude: -16.263045,
+const RouteMap = ({origin, destination}) => {
+  const originCoordinates = {
+    latitude: origin.details.geometry.location.lat,
+    longitude: origin.details.geometry.location.lng,
   };
 
-  const destination = {
-    latitude: 28.460127,
-    longitude: -16.269045,
+  const destinationCoordinates = {
+    latitude: destination.details.geometry.location.lat,
+    longitude: destination.details.geometry.location.lng,
   };
 
   return (
@@ -20,16 +20,16 @@ const RouteMap = () => {
       style={{width: '100%', height: '100%'}}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
-        latitudeDelta: 0.0222,
-        longitudeDelta: 0.0121,
+        latitude: originCoordinates.latitude,
+        longitude: originCoordinates.longitude,
+        latitudeDelta: 0.04,
+        longitudeDelta: 0.04,
       }}>
       <Marker coordinate={origin} />
       <Marker coordinate={destination} />
       <MapViewDirections
-        origin={origin}
-        destination={destination}
+        origin={originCoordinates}
+        destination={destinationCoordinates}
         apikey={GOOGLE_API_KEY}
         strokeWidth={4}
         strokeColor="black"
