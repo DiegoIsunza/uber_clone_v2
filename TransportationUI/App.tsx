@@ -7,6 +7,11 @@ import Router from './src/navigation/Root';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 
+// Amplify backend configuration
+import {Amplify} from 'aws-amplify';
+import awsExports from './src/aws-exports';
+Amplify.configure(awsExports);
+
 function App(): JSX.Element {
   const androidPermissions = async () => {
     try {
