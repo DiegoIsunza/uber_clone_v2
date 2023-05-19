@@ -1,14 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {FlatList, Image} from 'react-native';
+import {React, useEffect, useState} from 'react';
+import {Alert, Image} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 import cars from '../../assets/data/cars';
 
 const route = '../../assets/images';
 
+import Geolocation from '@react-native-community/geolocation';
+
 const HomeMap = () => {
-  const getImage = type => {
+  const [position, setPosition] = useState({lat: 0.0, long: 0.0});
+
+  const getImage = (type: String) => {
     switch (type) {
       case 'UberX':
         return require(route + '/top-UberX.png');
@@ -21,16 +25,29 @@ const HomeMap = () => {
     }
   };
 
+  useEffect(() => {
+    Geolocation.getCurrentPosition(
+      pos => {
+        setPosition({
+          lat: parseFloat(JSON.stringify(pos.coords.latitude)),
+          long: parseFloat(JSON.stringify(pos.coords.longitude)),
+        });
+      },
+      error => Alert.alert('GetCurrentPosition Error', JSON.stringify(error)),
+      {enableHighAccuracy: true},
+    );
+  }, []);
+
   return (
     <MapView
       style={{width: '100%', height: '100%'}}
       provider={PROVIDER_GOOGLE}
       showsUserLocation={true}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
-        latitudeDelta: 0.0222,
-        longitudeDelta: 0.0121,
+        latitude: position.lat,
+        longitude: position.long,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05,
       }}>
       {cars.map(car => (
         <Marker

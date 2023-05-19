@@ -22,11 +22,11 @@ const RouteMap = ({origin, destination}) => {
       initialRegion={{
         latitude: originCoordinates.latitude,
         longitude: originCoordinates.longitude,
-        latitudeDelta: 0.04,
-        longitudeDelta: 0.04,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05,
       }}>
-      <Marker coordinate={origin} />
-      <Marker coordinate={destination} />
+      <Marker coordinate={originCoordinates} />
+      <Marker coordinate={destinationCoordinates} />
       <MapViewDirections
         origin={originCoordinates}
         destination={destinationCoordinates}
