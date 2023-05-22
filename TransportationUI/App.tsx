@@ -2,6 +2,10 @@ import 'react-native-gesture-handler';
 import React, {useEffect} from 'react';
 import {StatusBar, PermissionsAndroid, Platform} from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
+import {
+  withAuthenticator,
+  useAuthenticator,
+} from '@aws-amplify/ui-react-native';
 
 import Router from './src/navigation/Root';
 
@@ -55,4 +59,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

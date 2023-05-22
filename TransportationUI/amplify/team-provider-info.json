@@ -9,7 +9,22 @@
       "UnauthRoleName": "amplify-transportapp-dev-212713-unauthRole",
       "StackName": "amplify-transportapp-dev-212713",
       "StackId": "arn:aws:cloudformation:us-west-1:238937351516:stack/amplify-transportapp-dev-212713/0e02ca90-f5f5-11ed-b3bb-0250fdfa7efb",
-      "AmplifyAppId": "d19u581x3kw0ed"
+      "AmplifyAppId": "d19u581x3kw0ed",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-transportapp-dev-212713-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "transportappea4daac3ea4daac3": {}
+      },
+      "function": {
+        "transportappea4daac3ea4daac3PostConfirmation": {
+          "deploymentBucketName": "amplify-transportapp-dev-212713-deployment",
+          "s3Key": "amplify-builds/transportappea4daac3ea4daac3PostConfirmation-2f446d463162644e4656-build.zip"
+        }
+      },
+      "api": {
+        "transportapp": {}
+      }
     }
   }
 }

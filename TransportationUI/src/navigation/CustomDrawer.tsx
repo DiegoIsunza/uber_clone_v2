@@ -5,6 +5,7 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
+import {Auth} from 'aws-amplify';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -52,7 +53,7 @@ const CustomDrawer = props => {
           }}>
           <Pressable
             onPress={() => {
-              console.warn('Messages');
+              Auth.signOut();
             }}>
             <Text style={{color: '#dddddd', paddingVertical: 5}}>Messages</Text>
           </Pressable>
@@ -78,6 +79,12 @@ const CustomDrawer = props => {
       </View>
 
       <DrawerItemList {...props} />
+      <Pressable
+        onPress={() => {
+          Auth.signOut();
+        }}>
+        <Text style={{padding: 5, paddingLeft: 20}}>Logout</Text>
+      </Pressable>
     </DrawerContentScrollView>
   );
 };

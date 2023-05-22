@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "transportappea4daac3ea4daac3",
+  "functionName": "transportappea4daac3ea4daac3PostConfirmation",
+  "resourceName": "transportappea4daac3ea4daac3PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "transportappea4daac3ea4daac3PostConfirmation",
+  "skipEdit": true
+}
